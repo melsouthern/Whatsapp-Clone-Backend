@@ -3,6 +3,8 @@ import User from "../interfaces/users.interface";
 
 const userSchema = new mongoose.Schema({
   username: String,
+  email: String,
+  password: String,
   profilePic: String,
 });
 
