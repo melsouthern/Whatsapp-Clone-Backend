@@ -1,12 +1,8 @@
 # Whatsapp-Clone-Backend
 
-## Description
+## Description & Development Tools
 
-An API built for a whatsapp style clone desktop app with the following functionality:
-
-## Development Tools
-
-Developed with the following:
+An API built for a whatsapp style clone desktop app. Developed with the following:
 
 - `Typescript`
 - `Node.js`
@@ -17,7 +13,7 @@ Developed with the following:
 
 ## Endpoints
 
-GET /users
+**GET /users**
 
 - Gets all users
 - Request body: none
@@ -38,7 +34,7 @@ GET /users
 ]
 ```
 
-POST /users
+**POST /users**
 
 - Signs up a new user
 - Example request body:
@@ -62,7 +58,7 @@ POST /users
 }
 ```
 
-GET /users/:email
+**GET /users/:email**
 
 - Gets specific user by email
 - Request body: none
@@ -77,7 +73,7 @@ GET /users/:email
 }
 ```
 
-POST /users/:email
+**POST /users/:email**
 
 - Sign in a specific user
 - Example params: /users/edgar.moon@yopmail.com
@@ -101,7 +97,7 @@ POST /users/:email
 }
 ```
 
-POST /users/:email/sign-out
+**POST /users/:email/sign-out**
 
 - Sign out a specific user
 - Example params: /users/edgar.moon@yopmail.com/sign-out
@@ -125,7 +121,7 @@ POST /users/:email/sign-out
 }
 ```
 
-GET /groups
+**GET /groups**
 
 - Gets all groups
 - Example response body:
@@ -151,7 +147,7 @@ GET /groups
 ]
 ```
 
-GET /groups/:group
+**GET /groups/:group**
 
 - Gets specific group
 - Example params: /groups/Crew
@@ -178,7 +174,7 @@ GET /groups/:group
 ]
 ```
 
-GET /groups/:groups/messages
+**GET /groups/:groups/messages**
 
 - Gets specific group messages
 - Example params: /groups/Work Peeps/messages
@@ -201,7 +197,7 @@ GET /groups/:groups/messages
 ]
 ```
 
-POST /groups
+**POST /groups**
 
 - Posts a new group
 - Example request body:
@@ -241,7 +237,7 @@ POST /groups
 }
 ```
 
-POST /groups/:group/messages
+**POST /groups/:group/messages**
 
 - Posts a message in a group
 - Example params: /groups/Work Peeps/messages
@@ -293,7 +289,7 @@ POST /groups/:group/messages
 
 Please note, if you would like to set up this project locally, you will need to set up a .env file with the following values linking to your personal mongoDB account:
 
-MONGO_USER="your-mongoDB-username"
-MONGO_PASSWORD="your-mongoDB-password"
-MONGO_URI="your-mongoDB-uri"
-JWT_SECRET="your-chosen-jwt-secret"
+MONGO_USER="your-mongoDB-username" <br />
+MONGO_PASSWORD="your-mongoDB-password" <br />
+MONGO_URI="your-mongoDB-uri" <br />
+JWT_SECRET="your-chosen-jwt-secret" <br />
