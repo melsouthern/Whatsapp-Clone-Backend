@@ -1,5 +1,5 @@
 import * as mongoose from "mongoose";
-import Group from "../interfaces/group.interface";
+import { Group } from "../interfaces/group.interface";
 
 const groupSchema = new mongoose.Schema({
   groupName: String,

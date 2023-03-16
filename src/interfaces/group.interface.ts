@@ -1,19 +1,17 @@
-interface Group {
+export interface Group {
   groupName: string;
   users: Username[];
   messages: Message[];
 }
 
-interface Username {
+export interface Username {
   username: string;
 }
 
-interface Message {
+export interface Message {
   sender: string;
   text: string;
   timestamp?: string;
   image?: string;
   emoji?: string;
 }
-
-export default Group;

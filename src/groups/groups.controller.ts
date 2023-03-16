@@ -1,12 +1,13 @@
 import * as express from "express";
 import groupModel from "./groups.model";
-import Controller from "interfaces/controller.interface";
+import { Controller } from "interfaces/controller.interface";
 import HttpException from "../exceptions/HttpException";
 import {
   validatePostGroupMessage,
   validatePostNewGroup,
 } from "../middleware/validation.model";
 import { PostGroupMessageDto } from "./groups.schema";
+import authMiddleware from "../middleware/auth.middleware";
 
 class GroupsController implements Controller {
   public path = "/groups";
@@ -21,19 +22,26 @@ class GroupsController implements Controller {
 
   public initializeRoutes() {
     // /groups
-    this.router.get(this.path, this.getAllGroups);
-    this.router.post(this.path, validatePostNewGroup, this.postNewGroup);
+    this.router.get(this.path, authMiddleware, this.getAllGroups);
+    this.router.post(
+      this.path,
+      authMiddleware,
+      validatePostNewGroup,
+      this.postNewGroup
+    );
 
     // /groups/:groupname
-    this.router.get(this.path + this.groupName, this.getGroup);
+    this.router.get(this.path + this.groupName, authMiddleware, this.getGroup);
 
     // /groups/:groupname/messages
     this.router.get(
       this.path + this.groupName + this.messages,
+      authMiddleware,
       this.getGroupMessages
     );
     this.router.post(
       this.path + this.groupName + this.messages,
+      authMiddleware,
       validatePostGroupMessage,
       this.postGroupMessage
     );

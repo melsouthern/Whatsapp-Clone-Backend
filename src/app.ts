@@ -5,7 +5,8 @@ import GroupsController from "groups/groups.controller";
 import UsersController from "users/users.controller";
 import errorMiddleware from "./middleware/error.middleware";
 import * as mongoose from "mongoose";
-import Controller from "interfaces/controller.interface";
+import { Controller } from "interfaces/controller.interface";
+import cookieParser from "cookie-parser";
 
 class App {
   public app: express.Application;
@@ -34,6 +35,7 @@ class App {
 
   private initializeMiddlewares() {
     this.app.use(bodyParser.json());
+    this.app.use(cookieParser());
   }
 
   private initializeControllers(controllers: Controller[]) {

@@ -1,5 +1,22 @@
 # Whatsapp-Clone-Backend
 
+## Description
+
+An API built for a whatsapp style clone desktop app with the following functionality:
+
+## Development Tools
+
+Developed with the following:
+
+- `Typescript`
+- `Node.js`
+- `Express`
+- `MongoDB`
+- `Mongoose`
+- `Zod`
+
+## Endpoints
+
 GET /users
 
 - Gets all users
@@ -76,7 +93,37 @@ POST /users/:email
 
 - Example response body:
 
-//does it return JWT?
+```JSON
+{
+    "username": "Edgar Moon",
+    "email": "edgar.moon@yopmail.com",
+    "profilePic": "https://randomuser.me/api/portraits/men/11.jpg"
+}
+```
+
+POST /users/:email/sign-out
+
+- Sign out a specific user
+- Example params: /users/edgar.moon@yopmail.com/sign-out
+- Example request body:
+
+```JSON
+{
+"username": "Edgar Moon",
+"email": "edgar.moon@yopmail.com",
+}
+```
+
+- Example response body:
+  "Successfully signed out edgar.moon@yopmail.com"
+
+```JSON
+{
+    "username": "Edgar Moon",
+    "email": "edgar.moon@yopmail.com",
+    "profilePic": "https://randomuser.me/api/portraits/men/11.jpg"
+}
+```
 
 GET /groups
 
@@ -241,3 +288,12 @@ POST /groups/:group/messages
     ]
 }
 ```
+
+## Repository Note
+
+Please note, if you would like to set up this project locally, you will need to set up a .env file with the following values linking to your personal mongoDB account:
+
+MONGO_USER="your-mongoDB-username"
+MONGO_PASSWORD="your-mongoDB-password"
+MONGO_URI="your-mongoDB-uri"
+JWT_SECRET="your-chosen-jwt-secret"

@@ -47,5 +47,22 @@ export const postSignInSchema = z
   })
   .strict();
 
+export const postSignOutSchema = z
+  .object({
+    username: z
+      .string({
+        required_error: "username field is required",
+      })
+      .min(1, "username field cannot be empty"),
+    email: z
+      .string({
+        required_error: "email field is required",
+      })
+      .min(1, "email field cannot be empty")
+      .email(),
+  })
+  .strict();
+
 export type PostNewUserDto = z.infer<typeof postNewUserSchema>;
 export type PostSignInDto = z.infer<typeof postSignInSchema>;
+export type PostSignOutDto = z.infer<typeof postSignOutSchema>;
